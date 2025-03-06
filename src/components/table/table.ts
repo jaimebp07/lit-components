@@ -1,4 +1,4 @@
-import {css, html, LitElement } from 'lit-element';
+import { LitElement } from 'lit-element';
 
 class Table extends LitElement {
 
