@@ -5,9 +5,11 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "webpack serve",
-    "build": "webpack build"
+    "start:dev": "cross-env NODE_ENV=development tsc && rollup -c && web-dev-server --config web-dev-server.config.js",
+    "test": "cross-env NODE_ENV=test rollup -c",
+    "start:prod": "cross-env NODE_ENV=production rollup -c",
+    "prebuild": "tsc src/config/config.ts --outDir src/config/",
+    "build": "npm run prebuild"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +19,16 @@
     "lit-element": "^2.4.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@web/dev-server": "^0.4.6",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
     "html-webpack-plugin": "^5.6.3",
+    "rollup": "^4.35.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-typescript2": "^0.36.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
     "webpack": "^5.98.0",
