@@ -19,17 +19,10 @@ Luego, instala las dependencias del proyecto:
 npm install
 ```
 
-## Construcción del Proyecto
-Para generar los archivos en dist y poder probar en local:
+## Ejecución del Demo
+Para para ejecutar el proyecto sepodra usando el siguiente comando:
 ```sh
 npm run start:dev
-```
-Esto generará la carpeta `dist/` con los archivos necesarios para ejecutar el demo.
-
-## Ejecución del Demo
-Para servir los archivos generados en `dist/`, usa el siguiente comando:
-```sh
-npx http-server dist -p 3000
 ```
 Esto iniciará un servidor en el puerto `3000`. Abre tu navegador y visita:
 ```

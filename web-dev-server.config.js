@@ -1,5 +1,5 @@
 export default {
-    rootDir: '.',
+    rootDir: 'dist',
     port: 3000,
     watch: true,
     nodeResolve: true, 
