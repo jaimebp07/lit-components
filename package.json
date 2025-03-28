@@ -1,5 +1,5 @@
 {
-  "name": "lit-element",
+  "name": "portealbo-wc",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
@@ -8,7 +8,8 @@
     "clean": "rimraf dist",
     "build:ts": "tsc",
     "build:rollup": "rollup -c",
-    "build": "npm run clean && npm run build:ts && npm run build:rollup",
+    "copy-package": "node scripts/copy-package.js",
+    "build": "npm run clean && npm run build:ts && npm run build:rollup && npm run copy-package",
     "test": "cross-env NODE_ENV=test rollup -c",
     "start:dev": "cross-env NODE_ENV=development npm run build  && web-dev-server --config web-dev-server.config.js",
     "start:prod": "cross-env NODE_ENV=production npm run build  && web-dev-server --config web-dev-server.config.js",
