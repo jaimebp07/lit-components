@@ -12,14 +12,13 @@ export class WcButton extends LitElement {
       background-color: #6a5acd;
       color: white;
       font-family: sans-serif;
-      margin-right: 20px;
-      width: 150px;
       border: none;
       border-radius: 10px;
       text-align: center;
       padding: 10px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      width: 150px;
     }
     
     button:hover {
@@ -30,6 +29,12 @@ export class WcButton extends LitElement {
       outline: 2px solid #ffffff;
       outline-offset: 2px;
     }
+
+    @media (max-width: 768px) {
+      button {
+        width: 100%;
+      }
+    }
   `;
 
   private handleClick() {
@@ -38,6 +43,7 @@ export class WcButton extends LitElement {
       bubbles: true,
       composed: true
     });
+    console.log("se dispacha el evento: ", event)
     this.dispatchEvent(event);
   }
 
